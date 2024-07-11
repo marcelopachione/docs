@@ -7,15 +7,82 @@
 
     
 #### Commands
-```bash
+```powershell
    Quick start:
-    1. Install pyenv-win in PowerShell.
-    Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"
+    1. Instalacao pyenv-win - PowerShell.
 
+        Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"
+
+    Obs.: Caso comando acima de erro, executar essa linha de comando:
+
+        Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+    
+
+    2. Feche a abra um novo terminal e execute o comando abaixo:
+        pyenv --version
+
+    Obs.: Caso o comando acima nao retorne a versao do pyenv, adicione as seguintes variables de ambinte no windows:
+        Variable            Value
+        PYENV               C:\Users\marcelo\.pyenv\pyenv-win\
+        PYENV_HOME          C:\Users\marcelo\.pyenv\pyenv-win\
+        PYENV_ROOT          C:\Users\marcelo\.pyenv\pyenv-win\
+
+
+   Comandos Uteis:
+    Verificar versao:
+        pyenv --version
+    
+    Lista as versoes Python suportadas pelo pyenv-win
+        pyenv install -l
+
+    Instalar uma versao suportada:
+        pyenv install <version>
+    
+    Setar a versao global pyenv-win
+        penv global <version>
+    
+    Setar a versao local (para um diretorio especifico) pyenv-win
+        penv local <version>
+
+    Mostra a versao do python em uso no caminho
+        pyenv versions
+
+    Desinstalar uma versao do python
+        pyenv uninstall <version>
+    
+
+
+
+
+    Ref.: https://github.com/pyenv-win/pyenv-win / 
+        
+```
+
+#### Como usar
+```bash
+    Neste exemplo vou configurar a versao 3.11.7 do python, nesse bloco vou instalar a versao 3.11.7 caso ela nao esteja instalada ainda
+        pyenv install 3.11.7 
+
+    Para validar 
+        pyenv versions
+
+    Entrar no diretorio do projeto
+        cd <nome_projeto>
+
+    Seta a versao global do python (Versao padrao do projeto caso informe a versao local)
+        pyenv global 3.12.4   # versao corrente instalada na minha maquina
+
+    Seta a versao local a ser utilizada
+        pyenv local 3.11.7
+
+    Para validar a versao sendo utilizada no projeto (Caso nao mostre a versao 3.7.11, feche e abrar o novo terminal)
+        python --version
+
+    
 
 ```
 
-    Ref.: https://github.com/pyenv-win/pyenv-win
+    
 
 ## Intall PIP and PIPX
 
