@@ -170,3 +170,33 @@ Comandos
         poetry remove pandas # exemplo
 
 ```
+
+## Ideia inicial para iniciar um projeto
+
+```bash
+poetry new <nome_projeto> ou poetry init
+
+cd <nome_projeto>
+
+git init
+
+pyenv local <version>
+
+poetry env use <version>
+
+git add .
+
+git commit -m "first commit"
+
+criar repositorio manualmente no github # maneira mais facil
+
+git remote add origin https://github.com/marcelopachione/<nome_repositorio>.git
+
+git branch -M main
+
+git push -u origin main
+
+poetry shell # acessar o ambiente virtual
+
+poetry add pandas # exemplo
+```
