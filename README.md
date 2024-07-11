@@ -39,10 +39,10 @@
         pyenv install <version>
     
     Setar a versao global pyenv-win
-        penv global <version>
+        pyenv global <version>
     
     Setar a versao local (para um diretorio especifico) pyenv-win
-        penv local <version>
+        pyenv local <version>
 
     Mostra a versao do python em uso no caminho
         pyenv versions
