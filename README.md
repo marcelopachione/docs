@@ -2,11 +2,11 @@
 
 ## Install and use Pyenv
 
-    **PYENV-win** 
+    **PYENV-WIN** 
     1. Ferramenta para gerenciar diferentes versões do Python no Windows.
 
     
-#### Commands
+#### Comandos
 ```powershell
    Quick start:
     1. Instalacao pyenv-win - PowerShell.
@@ -78,15 +78,48 @@
     Para validar a versao sendo utilizada no projeto (Caso nao mostre a versao 3.7.11, feche e abrar o novo terminal)
         python --version
 
-    
-
 ```
 
     
 
 ## Intall PIP and PIPX
 
-    Utilizados para instalar pacotes e bibliotecas que sera utilizado globalmente no ambiente
+    **PYENV-WIN** 
+    1. Utilizados para instalar pacotes e bibliotecas que sera utilizado globalmente no ambiente
+
+    2. Gestao de dependencias
+
+#### Comandos
+```bash
+    **PIP**
+    Lista os pacotes instalados
+        pip list
+    
+    Instalar um pacote
+        pip install pandas
+
+    Para projetos devemos utilizar ambientes virtuais, assim iremos instalar somente as bibliotecas necessarias para o projeto.
+
+    Criar ambiente virtual (Exemplo 01)
+        python -m venv .venv
+
+    Habilita o ambienter virtual
+        source .venv/Script/activate # windows
+
+    Para desabilitar o ambiente virtual
+        deactivate
+
+    Desinstalar todas a bibliotecas instaladas (Clean pip list)
+        pip freeze | grep -v "^-e" | xargs pip uninstall -y
+
+    **PIPX** --> Cria ambientes virtuais por usuario
+
+    Instalar pipx    
+        pip install pipx
+
+    Instalar pacotes com pipx
+        pipx install ipython # Example
+```
 
 ## Install Poetry
 
@@ -105,3 +138,35 @@
     5. Resolução de Dependências Confiável: Poetry usa um algoritmo de resolução de dependências robusto que garante que as versões corretas das dependências sejam instaladas para evitar conflitos e problemas.
 
     6. Comandos Simplificados: Com uma série de comandos simplificados, como poetry install, poetry add, poetry remove, e poetry publish, Poetry torna as tarefas comuns de desenvolvimento mais fáceis de serem executadas.
+
+```bash
+    Quick Start:
+
+    Vou instalar o python utilizando pipx
+        pipx install poetry
+
+        Obs.: Apos a instalacao, executar comando abaixo para que o poetry cuide do ambiente virtual tambem
+            poetry config virtualenvs.in-project true
+```
+
+Comandos
+
+```bash
+    Cria o projeto ja com alguns arquivos como README.md, pasta de testes, pasta do projeto e o arquivo pyproject
+            poetry new <nome_projeto>
+
+    Obs.: Aqui voce precisa definir a versao de python utilizando pyenv, pois se trata de um projeto. Ex.: pyenv local 3.11.7
+    
+    Seta a versao local do poetry
+        poetry env local 3.11.7
+
+    Para entrar no ambiente virtual
+        poetry shell    
+
+    Para instalar uma biblioteca com o poetry
+        poetry add pandas # exemplo
+    
+    Para remover um biblioteca (remove todas as dependencias)
+        poetry remove pandas # exemplo
+
+```
